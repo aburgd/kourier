@@ -80,8 +80,6 @@
             <scope>test</scope>
         </dependency>
         
-        <!-- https://mvnrepository.com/artifact/org.jetbrains
-        .kotlin/kotlin-test-junit -->
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-test-junit</artifactId>

@@ -8,7 +8,7 @@ import kotlin.test.assertFalse
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
-class CourierJUnitTests {
+class CourierJUnitTest {
     private val testSeed: Long = 10_192_010L // release date represented as long
     private val testPlayer: Courier = Courier(testSeed)
 

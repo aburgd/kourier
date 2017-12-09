@@ -6,7 +6,7 @@ import utils.*
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 
-class UtilsJUnitTests {
+class UtilsJUnitTest {
     private val testTraitsA: Array<String?> = arrayOf("built to destroy", "fast shot")
     private val testTraitsB: Array<String?> = arrayOf("fast shot", "fast shot")
 
