@@ -1,15 +1,12 @@
 ---
-title: kourier
+title: kourier - kourier
 ---
 
-[kourier](.)
+[kourier](../index.html) / [kourier](.)
 
-### Packages
+## Package kourier
 
-| [kourier](kourier/index.html) |  |
-| [player](player/index.html) |  |
-| [utils](utils/index.html) |  |
+### Functions
 
-### Index
+| [main](main.html) | `fun main(args: `[`Array`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html)`<`[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`>): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
 
-[All Types](alltypes/index.html)
