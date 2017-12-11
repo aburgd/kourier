@@ -129,7 +129,9 @@
                             <goal>single</goal>
                         </goals>
                         <configuration>
-                            <finalName>${project.artifactId}-${project.version}</finalName>
+                            <finalName>
+                                ${project.artifactId}-${project.version}
+                            </finalName>
                             <archive>
                                 <manifest>
                                     <addClasspath>true</addClasspath>
