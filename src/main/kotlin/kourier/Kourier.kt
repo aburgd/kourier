@@ -56,7 +56,7 @@ fun main(args: Array<String>) {
     println("Review:\n======")
     println("Name: $playerName")
     println("Age: $playerAge")
-    println("Gender $playerGender")
+    println("Gender: $playerGender")
 
     println()
     println("Attributes")

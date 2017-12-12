@@ -71,11 +71,11 @@ class UtilsJUnitTest {
 
     @Test
     fun testPrintedGender() {
-        assert(utils.genders.contains(utils.courierPrintedGender()))
+        assertTrue { utils.genders.contains(utils.courierPrintedGender()) }
     }
 
     @Test
     fun testNameGender() {
-        assert(utils.fairyGenders.contains(utils.courierNameGender(utils.courierPrintedGender())))
+        assertTrue { utils.fairyGenders.contains(utils.courierNameGender(utils.courierPrintedGender())) }
     }
 }
