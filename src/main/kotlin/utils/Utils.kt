@@ -5,8 +5,7 @@ package utils
 
 import io.codearte.jfairy.Fairy
 import io.codearte.jfairy.producer.person.Person
-import io.codearte.jfairy.producer.person.PersonProperties.female
-import io.codearte.jfairy.producer.person.PersonProperties.male
+import io.codearte.jfairy.producer.person.PersonProperties.*
 import player.Courier
 import java.util.HashSet
 import java.util.Random
@@ -137,7 +136,7 @@ fun newCourier(gender: String): Person {
     when {
     // for traditionally masculine names
         gender.equals(genders[7]) || gender.equals(genders[0]) -> {
-            courier = fairy.person(male())
+            courier = fairy.person(male(), minAge(16), maxAge(250))
             return courier
         }
     // for traditionally feminine names
