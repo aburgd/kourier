@@ -32,7 +32,7 @@
     
     <groupId>com.github.aburgd.kourier</groupId>
     <artifactId>kourier</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     
     <properties>
         <kotlin.version>1.2.0</kotlin.version>
