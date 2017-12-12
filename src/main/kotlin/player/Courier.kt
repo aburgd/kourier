@@ -6,7 +6,7 @@ package player
 import java.util.*
 
 /**
- * The class containing the static methods for generating a player Courier
+ * The class containing the methods for generating a player Courier
  */
 class Courier(randomSeed: Long) {
     private val rand: Random = Random(randomSeed)
@@ -39,7 +39,7 @@ class Courier(randomSeed: Long) {
     )
 
     /**
-     * Static method that chooses three skills from the [SKILLS] constant
+     * Method that chooses three skills from the [SKILLS] constant
      * @return an array of nullable strings containing the skills
      */
     fun skillTag(): Array<String?> {
@@ -52,7 +52,7 @@ class Courier(randomSeed: Long) {
     }
 
     /**
-     * Static method that chooses two traits from the [TRAITS] constant
+     * Method that chooses two traits from the [TRAITS] constant
      * @return an array of nullable strings containing the traits
      */
     fun traitPick(): Array<String?> {
@@ -65,7 +65,7 @@ class Courier(randomSeed: Long) {
     }
 
     /**
-     * Static method that generates random integers within the range from 1 to 7 (incl), and
+     * Method that generates random integers within the range from 1 to 7 (incl), and
      * assigns those values to the 7 keys of SPECIAL
      * @return a mutable map of string keys and integer values
      */

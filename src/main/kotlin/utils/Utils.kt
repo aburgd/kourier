@@ -3,8 +3,21 @@
  */
 package utils
 
+import io.codearte.jfairy.Fairy
+import io.codearte.jfairy.producer.person.Person
+import io.codearte.jfairy.producer.person.PersonProperties.female
+import io.codearte.jfairy.producer.person.PersonProperties.male
 import player.Courier
-import java.util.*
+import java.util.HashSet
+import java.util.Random
+
+val fairy: Fairy = Fairy.create()
+val genders: Array<String> = arrayOf("male", "female", "nonbinary", "agender", "androgyne", "bigender", "pangender", "transmasculine", "transfeminine")
+val fairyGenders: Array<String> = arrayOf("male", "female")
+
+private fun ClosedRange<Int>.random(): Int {
+    return Random().nextInt(endInclusive) + start
+}
 
 /**
  * Add a `print` function to `Array<String?>` to displays skills and traits
@@ -117,4 +130,41 @@ fun randomSeed(vararg items: Any): Long {
         newSeed += toLong(item)
     }
     return newSeed
+}
+
+fun newCourier(gender: String): Person {
+    val courier: Person
+    when {
+    // for traditionally masculine names
+        gender.equals(genders[7]) || gender.equals(genders[0]) -> {
+            courier = fairy.person(male())
+            return courier
+        }
+    // for traditionally feminine names
+        gender.equals(genders[8]) || gender.equals(genders[1]) -> {
+            courier = fairy.person(female())
+            return courier
+        }
+        else -> {
+            val nameGender: String = courierNameGender(gender)
+            courier = if (nameGender.equals(fairyGenders[1])) {
+                fairy.person(female())
+            } else {
+                fairy.person(male())
+            }
+            return courier
+        }
+    }
+}
+
+fun courierNameGender(printedGender: String): String {
+    return when {
+        printedGender.equals(genders[7]) || printedGender.equals(genders[0]) -> "male"
+        printedGender.equals(genders[8]) || printedGender.equals(genders[1]) -> "female"
+        else -> fairyGenders[(0..1).random()]
+    }
+}
+
+fun courierPrintedGender(): String {
+    return genders[(0..genders.size).random()]
 }

@@ -5,3 +5,7 @@ jdk:
 script:
   - mvn clean compile -DskipTests=false
   - mvn test -B
+cache:
+  directories:
+    - .autoconf
+    - $HOME/.m2
