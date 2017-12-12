@@ -6,5 +6,6 @@ script:
   - mvn clean compile -DskipTests=false
   - mvn test -B
 cache:
-  - .autoconf
-  - $HOME/.m2
+  directories:
+    - .autoconf
+    - $HOME/.m2
