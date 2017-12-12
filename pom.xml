@@ -177,33 +177,6 @@
                     <outputDir>${project.basedir}/docs</outputDir>
                 </configuration>
             </plugin>
-            
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jarsigner-plugin</artifactId>
-                <version>1.4</version>
-                <executions>
-                    <execution>
-                        <id>sign</id>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>verify</id>
-                        <goals>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <keystore>${user.home}/Documents/KeyStore.jks</keystore>
-                    <alias>com.github.aburgd</alias>
-                    <storepass>
-                        {ODURR7CsWgsHfNsvGW0kQhcSUXej3SinxmhesvSKcY4=}
-                    </storepass>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 </project>
