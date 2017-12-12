@@ -7,22 +7,40 @@
 
 package kourier
 
+import io.codearte.jfairy.producer.person.Person
 import player.Courier
 import utils.print
-import java.util.*
+import java.util.Scanner
 
 fun main(args: Array<String>) {
     val stdin: Scanner = Scanner(System.`in`)
 
+    val playerName: String
+    val playerAge: String
+    val playerGender: String
+
     print("Mojave Express Courier Application\n")
 
-    print("Name: ")
-    val playerName: String = stdin.nextLine()
-    print("Age: ")
-    val playerAge: String = stdin.nextInt().toString()
-    print("Gender: ")
-    val playerGender: String = stdin.next()
-    println()
+    print("Do you have a desired name, gender, AND age? (y/n) ")
+    val ans: String = stdin.next()
+    when (ans) {
+        "y", "Y" -> {
+            print("Name: ")
+            playerName = stdin.next().capitalize().plus(" ").plus(stdin.next().capitalize())
+            print("Age: ")
+            playerAge = stdin.nextInt().toString()
+            print("Gender: ")
+            playerGender = stdin.next()
+            println()
+        }
+        else -> {
+            playerGender = utils.courierPrintedGender()
+            val nameGender: String = utils.courierNameGender(playerGender)
+            val newPlayer: Person = utils.newCourier(nameGender)
+            playerAge = newPlayer.age.toString()
+            playerName = newPlayer.fullName
+        }
+    }
 
     val randomSeed: Long = utils.randomSeed(playerName, playerAge, playerGender)
     val newPlayer: Courier = Courier(randomSeed)
@@ -34,6 +52,15 @@ fun main(args: Array<String>) {
     val validSpecial: Boolean = utils.SPECIALUtils.isValidSPECIAL(playerSpecial)
     var validSkills: Boolean = utils.SkillsUtils.isValidSkills(playerSkills)
     var validTraits: Boolean = utils.TraitsUtils.isValidTraits(playerTraits)
+
+    println("Review:\n======")
+    println("Name: $playerName")
+    println("Age: $playerAge")
+    println("Gender $playerGender")
+
+    println()
+    println("Attributes")
+    println("==========")
 
     println("SPECIAL")
     println("-------")

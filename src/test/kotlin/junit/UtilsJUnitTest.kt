@@ -1,10 +1,14 @@
 package junit
 
+import io.codearte.jfairy.producer.person.Person
 import org.junit.Test
-import kotlin.test.assertTrue
-import utils.*
+import utils.SPECIALUtils
+import utils.SkillsUtils
+import utils.TraitsUtils
+import utils.toLong
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
+import kotlin.test.assertTrue
 
 class UtilsJUnitTest {
     private val testTraitsA: Array<String?> = arrayOf("built to destroy", "fast shot")
@@ -32,6 +36,8 @@ class UtilsJUnitTest {
             "Agility" to 5,
             "Luck" to 5
     )
+    private val testCourierA: Person = utils.newCourier("female")
+    private val testCourierB: Person = utils.newCourier("male")
 
     @Test
     fun testIsValidSkills() {
@@ -55,5 +61,21 @@ class UtilsJUnitTest {
     fun testToLong() {
         assertEquals(10192010, toLong(10_192_010L))
         assertEquals(318923937, toLong("test string"))
+    }
+
+    @Test
+    fun testNewCourier() {
+        assertTrue { testCourierA.isFemale }
+        assertFalse { testCourierB.isFemale }
+    }
+
+    @Test
+    fun testPrintedGender() {
+        assert(utils.genders.contains(utils.courierPrintedGender()))
+    }
+
+    @Test
+    fun testNameGender() {
+        assert(utils.fairyGenders.contains(utils.courierNameGender(utils.courierPrintedGender())))
     }
 }
