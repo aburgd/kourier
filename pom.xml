@@ -35,7 +35,7 @@
     <version>0.1.1</version>
     
     <properties>
-        <kotlin.version>1.2.0</kotlin.version>
+        <kotlin.version>1.2.10</kotlin.version>
         <main.class>kourier.Kourier</main.class>
         <kotlin.compiler.incremental>false</kotlin.compiler.incremental>
         <dokka.version>0.9.15</dokka.version>
