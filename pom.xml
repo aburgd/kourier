@@ -86,7 +86,7 @@
             <version>${kotlin.version}</version>
             <scope>test</scope>
         </dependency>
-    
+        
         <dependency>
             <groupId>io.codearte.jfairy</groupId>
             <artifactId>jfairy</artifactId>
