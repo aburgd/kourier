@@ -14,7 +14,7 @@ val fairy: Fairy = Fairy.create()
 val genders: Array<String> = arrayOf("male", "female", "nonbinary", "agender", "androgyne", "bigender", "pangender", "transmasculine", "transfeminine")
 val fairyGenders: Array<String> = arrayOf("male", "female")
 
-private fun ClosedRange<Int>.random(): Int {
+fun ClosedRange<Int>.random(): Int {
     return Random().nextInt(endInclusive) + start
 }
 

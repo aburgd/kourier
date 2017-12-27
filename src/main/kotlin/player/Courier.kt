@@ -4,19 +4,13 @@
 package player
 
 import java.util.*
+import utils.random
 
 /**
  * The class containing the methods for generating a player Courier
  */
 class Courier(randomSeed: Long) {
     private val rand: Random = Random(randomSeed)
-
-    /**
-     * Adds a `random` function to `ClosedRange<Int>` from start to endInclusive
-     */
-    private fun ClosedRange<Int>.random(): Int {
-        return Random().nextInt(endInclusive) + start
-    }
 
     private val SPECIAL: Map<String, Int> = mapOf(
             "Strength" to 5,

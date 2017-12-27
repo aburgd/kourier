@@ -5,6 +5,7 @@ import org.junit.Test
 import utils.SPECIALUtils
 import utils.SkillsUtils
 import utils.TraitsUtils
+import utils.random
 import utils.toLong
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
@@ -38,6 +39,8 @@ class UtilsJUnitTest {
     )
     private val testCourierA: Person = utils.newCourier("female")
     private val testCourierB: Person = utils.newCourier("male")
+
+    private val testRandomInt: Int = (0..1000).random()
 
     @Test
     fun testIsValidSkills() {
@@ -77,5 +80,11 @@ class UtilsJUnitTest {
     @Test
     fun testNameGender() {
         assertTrue { utils.fairyGenders.contains(utils.courierNameGender(utils.courierPrintedGender())) }
+    }
+
+    @Test
+    fun testClosedRangeIntRandom() {
+        assert(testRandomInt >= 0)
+        assert(testRandomInt <= 1000)
     }
 }
